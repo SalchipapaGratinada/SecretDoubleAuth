@@ -20,13 +20,12 @@ const generateOtp = async (req, res) => {
                 console.error('Error al generar el código QR:', err);
                 return res.sendStatus(500);
             }
-            res.status(200).json([{
-                message: "Correct",
-                body: {
+            res.status(200).json({
+                data: {
                     secret: secret,
                     img:url
                 }
-            }]);
+            });
         });
     } catch (err) {
         console.log(err);
