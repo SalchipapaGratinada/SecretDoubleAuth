@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "2ea4c63a-c1ba-45ba-85af-255acff65daf",
+		"name": "AUTH QR",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18093946",
+		"_collection_link": "https://martian-astronaut-206268.postman.co/workspace/Ludycom~a1b24750-80ff-4610-ac27-3ae033016936/collection/18093946-2ea4c63a-c1ba-45ba-85af-255acff65daf?action=share&creator=18093946&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "GENERATE OTP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idUser\": \"alfred\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/user/generateOtp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"user",
+						"generateOtp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "VALID CODE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idUser\": \"alfred\",\r\n    \"code\":\"326099\",\r\n    \"secret\": {\r\n                \"ascii\": \".#1i^aV{i6!k]&P>1ZnG:2WyKsFa8gTc\",\r\n                \"hex\": \"2e2331695e61567b6936216b5d26503e315a6e473a3257794b73466138675463\",\r\n                \"base32\": \"FYRTC2K6MFLHW2JWEFVV2JSQHYYVU3SHHIZFO6KLONDGCODHKRRQ\",\r\n                \"otpauth_url\": \"otpauth://totp/PLIGA APP?secret=FYRTC2K6MFLHW2JWEFVV2JSQHYYVU3SHHIZFO6KLONDGCODHKRRQ\"\r\n            }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/user/validCode",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"user",
+						"validCode"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
