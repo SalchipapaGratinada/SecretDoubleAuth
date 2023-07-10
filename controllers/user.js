@@ -6,6 +6,7 @@ const qrcode = require('qrcode');
 const generateOtp = async (req, res) => {
     try {
         const { idUser } = req.body;
+        console.log(idUser);
         const secret = speakeasy.generateSecret();
         secret.otpauth_url = secret.otpauth_url.replace("SecretKey", 'PLIGA APP');
         // Obtener el URI del secret (para generarlo con el móvil)
@@ -40,6 +41,7 @@ const generateOtp = async (req, res) => {
 const validCode = async (req, res) => {
     try {
         const { idUser, code, secret } = req.body;
+        console.log(code);
         const verified = speakeasy.totp.verify({
             secret: secret.base32,
             encoding: 'base32',
