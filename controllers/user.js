@@ -46,12 +46,12 @@ const validCode = async (req, res) => {
             token: code, // Código OTP ingresado por el usuario
             //window: 6, // Ventana de tiempo permitida (opcional) En caso de quieras que el codigo dure mas a pesar que se cambia
         });
-        res.status(200).json([{
+        res.status(200).json({
             message: "info",
             body: {
                 statusVerification: verified,
             }
-        }]);
+        });
     } catch (err) {
         console.log(err);
         res.status(400).json({
