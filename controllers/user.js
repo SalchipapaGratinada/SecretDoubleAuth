@@ -9,13 +9,6 @@ const generateOtp = async (req, res) => {
         console.log(idUser);
         const secret = speakeasy.generateSecret();
         secret.otpauth_url = secret.otpauth_url.replace("SecretKey", 'PLIGA APP');
-        // Obtener el URI del secret (para generarlo con el móvil)
-        /* const uri = speakeasy.otpauthURL({
-            secret: secret.base32,
-            label: 'PLIGA',
-            issuer: 'PLIGA APP'
-        }); */
-        //Esto genera la URL del QR del secret
         qrcode.toDataURL(secret.otpauth_url, (err, url) => {
             if (err) {
                 console.error('Error al generar el código QR:', err);
