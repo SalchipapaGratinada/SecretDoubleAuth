@@ -1,5 +1,4 @@
 const { bd } = require("../config/bd");
-const { handleHttpError } = require("../utils/handleError");
 const speakeasy = require('speakeasy');
 const qrcode = require('qrcode');
 
